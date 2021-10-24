@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header-nav{
+    display: block;
+    background-color: rgb(250, 169, 94);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+logo-quran {
+    padding: 1rem 0 0.5rem;
+}
+
+logo-quran a {
+    text-decoration: none;
+    color: black;
+}
+
+logo-quran:hover {
+    background: black;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+logo-quran:hover a {
+    color:rgb(250, 169, 94);
+    transition: all 0.5s ease;
+}
+
+search-bar {
+    padding: 0.5rem 0;
+}
+
+search-bar input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    border-radius: 10px 0 0 10px;
+}
+  
+/* Style the submit button */
+search-bar button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: black;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-radius: 0 10px 10px 0;
+}
+
+
+/* Clear floats */
+search-bar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Quran List Card */
+quran-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.cards__item {
+    margin: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 20px;
+    border: 2px solid gray;
+    background: rgba(192, 192, 192, 0.5);
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+.button {
+    margin: 5px 0;
+}
+
+.baca, .keterangan {
+    background: rgb(250, 169, 94);
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.baca:hover, .keterangan:hover {
+    border: 2px solid black;
+    padding: 3px;
+    background: rgb(174, 221, 255);
+    transition: background 0.5s;
+}
+
+main-banner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    overflow: auto;
+}
+
+.active {
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.banner {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    min-height: 100px;
+    margin: auto;
+    background: rgb(250, 169, 94);
+    padding: 10px;
+}
+
+.close {
+    float: right;
+    margin-top: -29px;
+    margin-right: -10px;
+    cursor: pointer;
+    background: red;
+    border: none;
+    padding: 2px;
+}
+
+.close:active {
+    color: blanchedalmond;
+}
+
+.baca__quran {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: whitesmoke;
+    left: -5000px;
+    transition: all 2s ease;
+    overflow: auto;  
+}
+
+.halaman__baca {
+    left: 0px;
+    transition: all 0.25s ease;
+}
+
+.div__button__back {
+    background-color: black;
+    width: 100%;
+    height: 95px;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.button__back {
+    font-size: 30px;
+    width: 100px;
+    position: relative;
+    top: 25px;
+    left: 25px;
+    border-radius: 10px;
+    padding: 5px;
+    background: rgb(250, 169, 94);
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.button__back:hover {
+    border: 5px solid black;
+    padding: 2px;
+}
+
+.button__back:active {
+    background: rgb(174, 221, 255);
+}
+
+.ayat__surah {
+    margin-top: 25px;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+.baca__quran > div:nth-child(2) {
+    margin-top: 100px;
+}
+
+.baca__quran > div:nth-child(odd) {
+    background:white;
+}
+
+.baca__quran > div:nth-child(1) {
+    background: rgb(250, 169, 94);
+}
+
+.nomor__ayat {
+    float: left;
+    border-radius: 50%;
+    border: 2px solid black;
+    padding: 5px;
+    background: rgb(250, 169, 94);
+    margin-right: 1px;
+}
+
+.ayat__surah > p:nth-child(2){
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: right;
+}
+
+.ayat__surah > p:nth-child(3){
+    color: rgb(221, 88, 0);
+    font-weight: bolder;
+}
+
+.loader {
+    margin-top: 200px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid black;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+  @media only screen and (max-width: 600px) {
+    /* search-bar {
+        margin: auto;
+    } */
+
+    quran-list {
+        width: 100%;
+    }
+
+    .cards__item {
+        min-width: 40%;
+    }
+    
+    nav {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .banner {
+        width: 90%;
+        left: 5%;
+        top: 20%;
+    }
+  }
